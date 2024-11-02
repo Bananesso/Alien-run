@@ -5,6 +5,9 @@ public class Trap : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        if (other.tag == "Player")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        }
     }
 }

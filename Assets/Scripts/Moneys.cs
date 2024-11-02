@@ -17,9 +17,12 @@ public class Moneys : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        MyCash += MoneyValue;
-        PlayerPrefs.SetInt("Bank", MyCash);
-        Destroy(gameObject);
+        if (other.tag == "Player")
+        {
+            MyCash += MoneyValue;
+            PlayerPrefs.SetInt("Bank", MyCash);
+            Destroy(gameObject);
+        }
     }
 
 }

@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1017,6 +1018,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 347770334136411429, guid: 7cfe7e0d1477d7343acb57191a58a7bd, type: 3}
+      propertyPath: rayLenght
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 347770334136411429, guid: 7cfe7e0d1477d7343acb57191a58a7bd, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1461529782866080822, guid: 7cfe7e0d1477d7343acb57191a58a7bd, type: 3}
       propertyPath: m_Name
       value: XBot
@@ -1322,7 +1331,7 @@ GameObject:
   - component: {fileID: 885167507}
   - component: {fileID: 885167506}
   - component: {fileID: 885167505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1598,6 +1607,14 @@ PrefabInstance:
     - target: {fileID: 7465520896638824847, guid: 31d9c03b54683b84297031e1c4bb596d, type: 3}
       propertyPath: m_Name
       value: YBot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204277222167707445, guid: 31d9c03b54683b84297031e1c4bb596d, type: 3}
+      propertyPath: rayLenght
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204277222167707445, guid: 31d9c03b54683b84297031e1c4bb596d, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3106,6 +3123,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2090248043885404692, guid: 843060695804ab343a85a182a8f30e11, type: 3}
+      propertyPath: rayLenght
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4898753523487719789, guid: 843060695804ab343a85a182a8f30e11, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3145,6 +3166,18 @@ PrefabInstance:
     - target: {fileID: 4898753523487719789, guid: 843060695804ab343a85a182a8f30e11, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795056064701534178, guid: 843060695804ab343a85a182a8f30e11, type: 3}
+      propertyPath: rayLenght
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795056064701534178, guid: 843060695804ab343a85a182a8f30e11, type: 3}
+      propertyPath: isGrounded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795056064701534178, guid: 843060695804ab343a85a182a8f30e11, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8832706024136858363, guid: 843060695804ab343a85a182a8f30e11, type: 3}
       propertyPath: m_Name

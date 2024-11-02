@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
@@ -6,9 +7,10 @@ public class CharacterMovement : MonoBehaviour
     private Animator _animator;
     private Rigidbody _rb;
 
-    //public float jumpForce;
-    //public bool isGrounded;
-    //LayerMask layerMask = LayerMask.GetMask("Wall", "Character");
+    public float jumpForce;
+    public float rayLenght;
+    public bool isGrounded;
+    public LayerMask layerMask;
 
     public float speed = 0.5f;
     public float rotationSpeed = 100.0f;
@@ -48,23 +50,24 @@ public class CharacterMovement : MonoBehaviour
             }
         }
 
-        //RaycastHit hit;
+        RaycastHit hit;
 
-        //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
-
-        //{
-        //    isGrounded = true;
-        //    if (Input.GetKeyDown(KeyCode.Space))
-        //    {
-        //        _rb.AddForce(new Vector3(_rb.velocity.x, jumpForce), ForceMode.Impulse);
-        //    }
-        //}
-        //else
-        //{
-        //    isGrounded = false;
-        //}
-
-        //_animator.SetBool("isGrounded", !isGrounded);
+        if (Physics.Raycast(transform.position, Vector3.up, out hit, rayLenght, layerMask))
+        {
+            isGrounded = true;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
+        }
+        else
+        {
+            isGrounded = false;
+        }
+        Debug.DrawRay(transform.position,Vector3.up,Color.blue);
+        Debug.DrawRay(hit.point, Vector3.up, Color.green);
+        Debug.DrawLine(transform.position, hit.point, Color.red);
+        _animator.SetBool("isGrounded", isGrounded);
 
         ClampVelocity();
     }
