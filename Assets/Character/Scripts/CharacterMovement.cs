@@ -23,8 +23,10 @@ public class CharacterMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
     }
+
     private void Update()
     {
+
         float translation = Input.GetAxis("Vertical") * speed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
 
@@ -52,7 +54,7 @@ public class CharacterMovement : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, Vector3.up, out hit, rayLenght, layerMask))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, rayLenght, layerMask))
         {
             isGrounded = true;
             if (Input.GetKeyDown(KeyCode.Space))
@@ -64,9 +66,6 @@ public class CharacterMovement : MonoBehaviour
         {
             isGrounded = false;
         }
-        Debug.DrawRay(transform.position,Vector3.up,Color.blue);
-        Debug.DrawRay(hit.point, Vector3.up, Color.green);
-        Debug.DrawLine(transform.position, hit.point, Color.red);
         _animator.SetBool("isGrounded", isGrounded);
 
         ClampVelocity();
@@ -74,12 +73,16 @@ public class CharacterMovement : MonoBehaviour
 
     private void ClampVelocity()
     {
-        float velocity = _rb.velocity.magnitude;
+        Vector3 vel = _rb.velocity;
+        vel.y = 0;
+        float velocity = vel.magnitude;
 
-        if (velocity > _maxSpeed)
+        if (velocity > _speed)
         {
-            Vector3 movementDirection = _rb.velocity.normalized;
-            _rb.velocity = movementDirection * _maxSpeed;
+            Vector3 movementDirection = vel.normalized;
+            Vector3 rbVelocity = movementDirection * _speed;
+            rbVelocity.y = _rb.velocity.y;
+            _rb.velocity = rbVelocity;
         }
     }
 }

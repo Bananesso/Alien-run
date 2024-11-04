@@ -24,5 +24,4 @@ public class Moneys : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }
