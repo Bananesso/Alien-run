@@ -51,8 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0, y: 100, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 14.70435, y: 100, z: 10}
+  m_Center: {x: -7.3741565, y: 0, z: 0}
 --- !u!1 &6785354222566326115
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7385170614914474613}
-  - component: {fileID: 3425627265280948923}
+  - component: {fileID: 6933041201585210467}
   m_Layer: 0
   m_Name: InvisibleWall
   m_TagString: Untagged
@@ -193,7 +193,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4965777714324425034}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3425627265280948923
+--- !u!65 &6933041201585210467
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,5 +212,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0, y: 100, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 14.70435, y: 100, z: 10}
+  m_Center: {x: 7.374156, y: 0, z: 0}

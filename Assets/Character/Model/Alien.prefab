@@ -180,11 +180,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 952787610003050204, guid: a52f3055fd359564ba589a93412af4ab, type: 3}
       propertyPath: jumpForce
-      value: 5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 952787610003050204, guid: a52f3055fd359564ba589a93412af4ab, type: 3}
+      propertyPath: rayLenght
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 952787610003050204, guid: a52f3055fd359564ba589a93412af4ab, type: 3}
       propertyPath: isGrounded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3943886778571819796, guid: a52f3055fd359564ba589a93412af4ab, type: 3}
       propertyPath: m_TagString
